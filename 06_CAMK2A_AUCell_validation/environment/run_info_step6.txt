@@ -1,0 +1,42 @@
+Batiuk CAMK2A AUCell validation
+
+Analysis definitions
+- Count-defined positivity: raw CAMK2A count greater than zero.
+- Default AUCell definition: CAMK2A AUC greater than zero within the top 5% rank window.
+- Extended AUCell definition: CAMK2A AUC greater than zero within the top 10% rank window used for single-gene positivity in the downstream analysis.
+- Expected cell class: excitatory neurons.
+
+Fixed parameters
+- Target gene: CAMK2A
+- Default rank window: 0.05
+- Extended rank window: 0.10
+- Cell-level Source Data export: enabled
+
+Observed cell counts
+- Astrocytes: 1,494
+- Excitatory neurons: 108,353
+- Inhibitory neurons: 73,464
+- Oligodendrocytes: 5,779
+- Other cells: 4,027
+
+Positive-cell summaries
+- Raw counts: 143,825 positive cells; excitatory-neuron share, 71.36%.
+- Top 5% rank window: 123,964 positive cells; excitatory-neuron share, 77.79%.
+- Top 10% rank window: 143,701 positive cells; excitatory-neuron share, 71.20%.
+
+Concordance with count-defined positivity
+- All cells, top 5%: precision 0.9976, recall 0.8599, F1 0.9236, Jaccard 0.8581.
+- Excitatory neurons, top 5%: precision 0.9998, recall 0.9393, F1 0.9686, Jaccard 0.9391.
+- All cells, top 10%: precision 0.9870, recall 0.9861, F1 0.9865, Jaccard 0.9735.
+- Excitatory neurons, top 10%: precision 0.9978, recall 0.9947, F1 0.9963, Jaccard 0.9925.
+
+Software record
+- R 4.5.0 on Ubuntu 22.04.5 LTS
+- AUCell 1.30.1
+- Seurat 5.3.0
+- SeuratObject 5.4.0
+- Matrix 1.7-3
+- ggplot2 4.0.0
+- dplyr 1.1.4
+- tidyr 1.3.1
+- patchwork 1.3.2
